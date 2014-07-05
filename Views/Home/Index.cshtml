@@ -1,0 +1,21 @@
+﻿@model List<MvcMusicStore.Models.Product>
+@{
+    ViewBag.Title = "ONLINE COSMETIC Store";
+}
+<div id="promotion">
+</div>
+
+<h3><em>Fresh</em> off the grill</h3>
+
+<ul id="album-list">
+    @foreach (var pro in Model)
+    {
+        <li><a href="@Url.Action("Details", "Store",
+                new { id = pro.ProductId })">
+
+            <img alt="@pro\.Title" src="@pro.ProductArtUrl
+                " />
+            <span>@pro.Title</span> </a>
+        </li>
+    }
+</ul>
